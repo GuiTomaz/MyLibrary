@@ -1,0 +1,120 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+    Spotify
+{% endblock %}
+
+    {% block corpo %}
+         <div
+      id="carousel-id"
+      class="carousel slide d-none d-md-block mb-4"
+      data-ride="carousel"
+      data-interval="3000"
+    >
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-id" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="{% static 'images/capa1.jpg' %}"
+            class="d-block w-100"
+            style="height: 640px"
+          />
+
+          <div class="carousel-caption carousel-text" style="top: 275px">
+            <div class="text-center">
+              <h1>Música para todos!</h1>
+              <br/>
+              <span> <a href="" class="btn btn-lg btn-custom btn-verde">Aproveite o Spotify Free</a>
+                <a href="" class="btn btn-lg btn-custom btn-branco">Obter Spotify Premium</a></span><br/>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="{% static 'images/capa2.jpg' %}"
+            class="d-block w-100"
+            style="height: 640px"
+          />
+          <div class="carousel-caption" style="top: 275px">
+            <div class="text-center carousel-text">
+                <h1>As melhores rádios!</h1>
+                <br/>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#carousel-id"
+        class="carousel-control-prev"
+        role="button"
+        data-slide="prev"
+      >
+        <span aria-hidden="true" class="carousel-control-prev-icon">
+          <span class="sr-only">Anterior</span>
+        </span>
+      </a>
+      <a
+        href="#carousel-id"
+        class="carousel-control-next"
+        role="button"
+        data-slide="next"
+      >
+        <span aria-hidden="true" class="carousel-control-next-icon">
+          <span class="sr-only">Proximo</span>
+        </span>
+      </a>
+    </div>
+     <section class="recursos">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row albuns">
+                  <div class="col-md-6">
+                    <img src="{% static 'images/img1.jpg' %}" class="img-fluid">
+                  </div>
+                  <div class="col-md-6">
+                    <img src="{% static 'images/img2.jpg' %}" class="img-fluid">
+                  </div>
+                </div>
+                  <div class="row albuns">
+                    <div class="col-md-6">
+                      <img src="{% static 'images/img3.jpg' %}" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                      <img src="{% static 'images/img4.jpg' %}" class="img-fluid">
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+
+                <h2>O que o Spotify tem?</h2>
+
+                <h3>Músicas</h3>
+                <p>O Spotify tem milhões de músicas . Escute seus sons
+                  favoritos, descubra novas músicas e reúna seus favoritos
+                  em um só lugar.
+                </p>
+
+                <h3>Playlists</h3>
+                <p>No Spotify você encontra uma playlist para cada momento.
+                  Todas feitas por fanáticos e especialistas da música.
+                </p>
+
+                <h3>Novos lançamentos</h3>
+                <p>Escute os novos lançamentos de singles e álbuns da semana e veja
+                  o que está bombando no Top 50.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </section><!-- fim recursos -->
+
+    {% endblock %}
+
