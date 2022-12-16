@@ -1,0 +1,28 @@
+*{
+    margin:0;
+}
+
+#navbar{
+    height:6rem;
+    background:whitesmoke ;
+}
+.logo{
+    font-size:3rem;
+    color:red;
+
+}
+
+.hero{
+    color:white;
+    background:rgb(0,0,0,0.85);
+    min-height:calc(100vh - 6rem);
+}
+
+span{
+    color:red;
+    font-size:3rem;
+}
+button{
+    background:red;
+    color:white;
+}
