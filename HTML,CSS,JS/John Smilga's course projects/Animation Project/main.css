@@ -90,16 +90,19 @@ body {
 
 .temp {
   min-height: 100vh;
-  background: red;
+  background: blue;
 }
 
-.hero-text{
+/*.hero-text{
   
   animation: slideFromTop 3s 1;
   animation-fill-mode:forwards;
  
+}*/
+.hero-text:hover{
+  animation: slideFromTop 3s 1;
+  animation-fill-mode:forwards;
 }
-
 /*animations*/
 @keyframes slideFromTop {
   0%{
