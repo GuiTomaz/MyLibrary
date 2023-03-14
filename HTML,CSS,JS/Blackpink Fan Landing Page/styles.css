@@ -46,6 +46,7 @@ header{
 
 .navbar{
     visibility:hidden;
+    
 }
 @media screen and (min-width:480px){
     
@@ -79,10 +80,11 @@ header{
     }
     
     .navbar{
+        
         visibility:visible;
         float:right;
         color:white;
-
+        
         width:calc(100% - 150px);
     
     }
@@ -99,5 +101,9 @@ header{
         display:inline;
         padding:0 10px;
         line-height:48px;
+    }
+    .navbar a:hover{
+        color:#ff76d8;
+        transition:all 1s;
     }
 }
