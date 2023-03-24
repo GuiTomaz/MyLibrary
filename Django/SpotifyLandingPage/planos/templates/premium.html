@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+    Spotify | Premium
+{% endblock %}
+{% block specificImports %}
+     <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'css/premium.css' %}">
+{% endblock%}
+{% block corpo %}
+     <div class="container">
+        <div class="container text-center">
+            <h3 style="margin-top:89px;"><strong>Escolha o seu plano premium</strong></h3>
+            <h4>Ouça sem limites no seu celular, alto-falante e em outros dispositivos.</h4>
+        </div>
+
+        <div class="row mb-4" style="margin-top:60px;">
+            {% for plano in planos %}
+                <div class="col-lg-4 col-md-6">
+                <div class="card mb-3">
+                <div class="card-body">
+                    <div class="text-left">
+                        <span class="badge badge-primary">{{ plano.gratuidade }}</span>
+                        <h5 class="card-title">{{ plano.nome }}</h5>
+                    </div>
+                    <div class="card-text text-left">
+                       {{ plano.preco }}/mês após o período da oferta
+                        <p>{{ plano.conta }}</p>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <ul >
+                            {{ plano.vantagens |safe }}
+                        </ul>
+                        <a href="" class="btn btn-lg btn-custom btn-preto">Começar</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

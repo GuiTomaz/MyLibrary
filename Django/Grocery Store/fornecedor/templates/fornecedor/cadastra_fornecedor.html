@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+   Fornecedores Parceiros
+{% endblock %}
+
+{% block corpo %}
+   <div class='mb-4'>
+       {% if 'fornecedor_id' in request.session %}
+            <h5>Editar Fornecedor</h5>
+       {% else %}
+            <h5>Cadastrar Fornecedor</h5>
+       {% endif %}
+      <hr class='mt-0'>
+   </div>
+    <form action="{% url 'fornecedor:cadastra_fornecedor' %}" method="POST" class="pb-4" novalidate>
+
+        <div class="row mb-xl-3">
+             <div class="col-xl-6">
+                <div class="row">
+                   <label for="id_nome" class="col-xl-4 font-weight-bold">Nome</label>
+                   <div class="col-xl-10">
+                      {{ form.nome }}
+                      {# <input type="text" name="nome" maxlength="100" required="" id="id_nome"> #}
+                      {% if form.nome.errors %}
+                         <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.nome.errors %}
+                               <small>{{ error }}</small>
+                            {% endfor %}
+                         </div>
+                      {% endif %}
+                   </div>
+                </div>
+            </div>
+
+
+
+                 <div class="col-xl-6">
+                    <div class="row">
+                       <label for="id_endereco" class="col-xl-4 font-weight-bold">Endereço</label>
+                       <div class="col-xl-10">
+                          {{ form.endereco }}
+                          {% if form.endereco.errors %}
+                             <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                                {% for error in form.endereco.errors %}
+                                   <small>{{ error }}</small>
+                                {% endfor %}
+                             </div>
+                          {% endif %}
+                    </div>
+                 </div>
+              </div>
+             </div>
+
+
+        <div class="row mb-xl-3">
+             <div class="col-xl-6">
+                <div class="row">
+                   <label for="id_telefone" class="col-xl-4 font-weight-bold">Telefone</label>
+                   <div class="col-xl-10">
+                      {{ form.telefone }}
+                      {% if form.telefone.errors %}
+                         <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.telefone.errors %}
+                               <small>{{ error }}</small>
+                            {% endfor %}
+                         </div>
+                      {% endif %}
+                   </div>
+                </div>
+             </div>
+
+            <div class="col-xl-6">
+                <div class="row">
+                   <label for="id_cnpj" class="col-xl-6 font-weight-bold">CNPJ</label>
+                    <em>(Apenas os dígitos)</em>
+                   <div class="col-xl-10">
+                      {{ form.cnpj }}
+                      {% if form.cnpj.errors %}
+                         <div class="alert alert-danger mb-0" role="alert" style="padding-top: 2px; padding-bottom: 2px">
+                            {% for error in form.cnpj.errors %}
+                               <small>{{ error }}</small>
+                            {% endfor %}
+                         </div>
+                      {% endif %}
+                   </div>
+                </div>
+             </div>
+          </div>
+
+
+    <div class="row mb-5">
+         <div class="col-xl-6">
+            <div class="row">
+               <div class="col-xl-10 offset-xl-2">
+                   {# Django só exige csrf_token em requisiçoes POST pois são aquelas que acessam o BD#}
+                   {% csrf_token %}
+                  <button id="botao" type="submit" class="btn btn-primary">
+                      {% if 'fornecedor_id' in request.session %}
+                        <img src="{% static 'images/skin/database_edit.png' %}"> Alterar
+                      {% else %}
+                        <img src="{% static 'images/skin/database_add.png' %}"> Cadastrar
+                      {% endif %}
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+    </form>
+
+
+{% endblock %}
